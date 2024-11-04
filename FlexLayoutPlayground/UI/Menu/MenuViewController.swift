@@ -9,11 +9,14 @@ import UIKit
 
 enum PageType: Int, CaseIterable {
     case intro
+    case rayWenderlich
     
     var text: String {
         switch self {
         case .intro:
             return "Intro Example"
+        case .rayWenderlich:
+            return "Raywenderlich Tutorial"
         }
     }
     
@@ -21,6 +24,8 @@ enum PageType: Int, CaseIterable {
         switch self {
         case .intro:
             return IntroViewController(pageType: self)
+        case .rayWenderlich:
+            return RaywenderlichTutorialViewController(pageType: self)
         }
     }
 }
