@@ -10,6 +10,7 @@ import UIKit
 enum PageType: Int, CaseIterable {
     case intro
     case rayWenderlich
+    case tableview
     
     var text: String {
         switch self {
@@ -17,6 +18,8 @@ enum PageType: Int, CaseIterable {
             return "Intro Example"
         case .rayWenderlich:
             return "Raywenderlich Tutorial"
+        case .tableview:
+            return "UITableView with variable cell's height"
         }
     }
     
@@ -26,6 +29,8 @@ enum PageType: Int, CaseIterable {
             return IntroViewController(pageType: self)
         case .rayWenderlich:
             return RaywenderlichTutorialViewController(pageType: self)
+        case .tableview:
+            return TableViewExampleViewController(pageType: self)
         }
     }
 }

@@ -30,7 +30,7 @@ final class RaywenderlichTutorialViewController: BaseViewController {
     fileprivate func loadShows() -> [Show] {
         let path = Bundle.main.path(forResource: "Shows", ofType: "plist") ?? ""
         let dictArray = NSArray(contentsOfFile: path) as? [[String: AnyObject]]
-        print("### 패스: \(path), 딕트 어레이: \(dictArray)")
+
         guard let path = Bundle.main.path(forResource: "Shows", ofType: "plist"),
               let dictArray = NSArray(contentsOfFile: path) as? [[String: AnyObject]]
         else { return [] }
