@@ -11,6 +11,7 @@ enum PageType: Int, CaseIterable {
     case intro
     case rayWenderlich
     case tableview
+    case collectionView
     
     var text: String {
         switch self {
@@ -20,6 +21,8 @@ enum PageType: Int, CaseIterable {
             return "Raywenderlich Tutorial"
         case .tableview:
             return "UITableView with variable cell's height"
+        case .collectionView:
+            return "UICollectionView with variable cell's height"
         }
     }
     
@@ -31,6 +34,8 @@ enum PageType: Int, CaseIterable {
             return RaywenderlichTutorialViewController(pageType: self)
         case .tableview:
             return TableViewExampleViewController(pageType: self)
+        case .collectionView:
+            return CollectionViewExampleViewController(pageType: self)
         }
     }
 }
