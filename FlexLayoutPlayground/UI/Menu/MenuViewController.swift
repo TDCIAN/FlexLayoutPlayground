@@ -12,6 +12,7 @@ enum PageType: Int, CaseIterable {
     case rayWenderlich
     case tableview
     case collectionView
+    case exampleColumn
     
     var text: String {
         switch self {
@@ -23,6 +24,8 @@ enum PageType: Int, CaseIterable {
             return "UITableView with variable cell's height"
         case .collectionView:
             return "UICollectionView with variable cell's height"
+        case .exampleColumn:
+            return "Example 1 - Column"
         }
     }
     
@@ -36,17 +39,19 @@ enum PageType: Int, CaseIterable {
             return TableViewExampleViewController(pageType: self)
         case .collectionView:
             return CollectionViewExampleViewController(pageType: self)
+        case .exampleColumn:
+            return Example1ViewController(pageType: self)
         }
     }
 }
 
-final class MenuViewController: BaseViewController {
+final class MenuViewController: UIViewController {
     fileprivate var mainView: MenuView {
         return self.view as! MenuView
     }
     
-    override init() {
-        super.init()
+    init() {
+        super.init(nibName: nil, bundle: nil)
         title = "FlexLayout Examples"
     }
     

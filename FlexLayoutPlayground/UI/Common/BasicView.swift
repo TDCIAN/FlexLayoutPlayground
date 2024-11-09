@@ -18,12 +18,12 @@ class BasicView: UIView {
         layer.borderColor = UIColor.green.cgColor
         layer.borderWidth = 2
         
-        label.text = text
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.sizeToFit()
-        addSubview(label)
+        self.label.text = text
+        self.label.font = .systemFont(ofSize: 14)
+        self.label.textColor = .white
+        self.label.numberOfLines = 0
+        self.label.sizeToFit()
+        self.addSubview(self.label)
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +33,7 @@ class BasicView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        label.pin.center()
+        self.label.pin.center()
     }
     
     var sizeThatFitsExpectedArea: CGFloat = 40 * 40
@@ -42,13 +42,13 @@ class BasicView: UIView {
         var newSize = CGSize()
         if size.width != CGFloat.greatestFiniteMagnitude {
             newSize.width = size.width
-            newSize.height = sizeThatFitsExpectedArea / newSize.width
+            newSize.height = self.sizeThatFitsExpectedArea / newSize.width
         } else if size.height != CGFloat.greatestFiniteMagnitude {
             newSize.height = size.height
-            newSize.width = sizeThatFitsExpectedArea / newSize.height
+            newSize.width = self.sizeThatFitsExpectedArea / newSize.height
         } else {
             newSize.width = 40
-            newSize.height = sizeThatFitsExpectedArea / newSize.width
+            newSize.height = self.sizeThatFitsExpectedArea / newSize.width
         }
         
         return newSize

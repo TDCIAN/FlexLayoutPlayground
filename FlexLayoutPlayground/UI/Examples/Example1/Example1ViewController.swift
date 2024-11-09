@@ -1,17 +1,17 @@
 //
-//  IntroViewController.swift
+//  Example1ViewController.swift
 //  FlexLayoutPlayground
 //
-//  Created by 김정민 on 11/3/24.
+//  Created by 김정민 on 11/9/24.
 //
 
 import UIKit
 
-final class IntroViewController: UIViewController {
+final class Example1ViewController: UIViewController {
     
     init(pageType: PageType) {
         super.init(nibName: nil, bundle: nil)
-        title = pageType.text
+        self.title = pageType.text
     }
     
     required init?(coder: NSCoder) {
@@ -19,6 +19,6 @@ final class IntroViewController: UIViewController {
     }
     
     override func loadView() {
-        view = IntroView()
+        self.view = Example1View()
     }
 }

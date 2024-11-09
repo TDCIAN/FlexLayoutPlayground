@@ -12,13 +12,13 @@ struct Method {
     let description: String
 }
 
-final class TableViewExampleViewController: BaseViewController {
+final class TableViewExampleViewController: UIViewController {
     private var mainView: TableViewExampleView {
         return self.view as! TableViewExampleView
     }
     
     init(pageType: PageType) {
-        super.init()
+        super.init(nibName: nil, bundle: nil)
         
         title = pageType.text
     }

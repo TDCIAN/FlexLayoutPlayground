@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class CollectionViewExampleViewController: BaseViewController {
+final class CollectionViewExampleViewController: UIViewController {
     
     private var mainView: CollectionViewExampleView {
         return self.view as! CollectionViewExampleView
     }
     
     init(pageType: PageType) {
-        super.init()
+        super.init(nibName: nil, bundle: nil)
         
         title = pageType.text
     }

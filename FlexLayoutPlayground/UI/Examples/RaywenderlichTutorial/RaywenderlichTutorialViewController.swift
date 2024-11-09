@@ -7,13 +7,10 @@
 
 import UIKit
 
-final class RaywenderlichTutorialViewController: BaseViewController {
-    fileprivate var mainView: RaywenderlichTutorialView {
-        return self.view as! RaywenderlichTutorialView
-    }
+final class RaywenderlichTutorialViewController: UIViewController {
     
     init(pageType: PageType) {
-        super.init()
+        super.init(nibName: nil, bundle: nil)
         self.title = pageType.text
     }
     
@@ -28,9 +25,6 @@ final class RaywenderlichTutorialViewController: BaseViewController {
     }
     
     fileprivate func loadShows() -> [Show] {
-        let path = Bundle.main.path(forResource: "Shows", ofType: "plist") ?? ""
-        let dictArray = NSArray(contentsOfFile: path) as? [[String: AnyObject]]
-
         guard let path = Bundle.main.path(forResource: "Shows", ofType: "plist"),
               let dictArray = NSArray(contentsOfFile: path) as? [[String: AnyObject]]
         else { return [] }
