@@ -13,6 +13,7 @@ enum PageType: Int, CaseIterable {
     case tableview
     case collectionView
     case exampleColumn
+    case yogaExampleA
     
     var text: String {
         switch self {
@@ -26,6 +27,8 @@ enum PageType: Int, CaseIterable {
             return "UICollectionView with variable cell's height"
         case .exampleColumn:
             return "Example 1 - Column"
+        case .yogaExampleA:
+            return "Yoga C Example"
         }
     }
     
@@ -41,6 +44,8 @@ enum PageType: Int, CaseIterable {
             return CollectionViewExampleViewController(pageType: self)
         case .exampleColumn:
             return Example1ViewController(pageType: self)
+        case .yogaExampleA:
+            return YogaExampleAViewController(pageType: self)
         }
     }
 }
