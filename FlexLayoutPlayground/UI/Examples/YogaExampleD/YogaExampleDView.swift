@@ -1,15 +1,15 @@
 //
-//  YogaExampleBView.swift
+//  YogaExampleDView.swift
 //  FlexLayoutPlayground
 //
-//  Created by 김정민 on 11/11/24.
+//  Created by 김정민 on 11/14/24.
 //
 
 import UIKit
 import FlexLayout
 import PinLayout
 
-final class YogaExampleBView: UIView {
+final class YogaExampleDView: UIView {
     
     private let rootFlexContainer = UIView()
     
@@ -23,15 +23,15 @@ final class YogaExampleBView: UIView {
         let label = UIView()
         label.backgroundColor = .black
         
-        self.rootFlexContainer.layer.borderColor = UIColor.red.cgColor
-        self.rootFlexContainer.layer.borderWidth = 1
-    
-        // Yoga's Objective-C Example
-        self.rootFlexContainer.flex.alignItems(.center).justifyContent(.center).padding(20).define { flex in
-            flex.addItem(imageView).size(150).aspectRatio(1).marginBottom(20)
-            flex.addItem(label).width(100).height(25)
+        // Yoga's C# example
+        self.rootFlexContainer.flex.justifyContent(.start).alignItems(.start).define { flex in
+            flex.addItem(imageView).alignSelf(.stretch).grow(1)
+            flex.addItem(label).width(300).height(25).margin(20)
         }
         self.addSubview(self.rootFlexContainer)
+        
+        self.rootFlexContainer.layer.borderColor = UIColor.red.cgColor
+        self.rootFlexContainer.layer.borderWidth = 1
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +43,7 @@ final class YogaExampleBView: UIView {
         
         // Layout the flexbox container using PinLayout
         // NOTE: Could be also layouted by setting directly rootFlexContainer.frame
-        self.rootFlexContainer.pin.top(self.pin.safeArea).horizontally(self.pin.safeArea).height(200)
+        self.rootFlexContainer.pin.top(self.pin.safeArea).horizontally(self.pin.safeArea).height(300)
         
         // Then let the flexbox container layout itself
         self.rootFlexContainer.flex.layout()

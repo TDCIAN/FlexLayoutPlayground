@@ -15,6 +15,8 @@ enum PageType: Int, CaseIterable {
     case exampleColumn
     case yogaExampleA
     case yogaExampleB
+    case yogaExampleC
+    case yogaExampleD
     
     var text: String {
         switch self {
@@ -32,6 +34,10 @@ enum PageType: Int, CaseIterable {
             return "Yoga C Example"
         case .yogaExampleB:
             return "Yoga Objective-C Example"
+        case .yogaExampleC:
+            return "Yoga Java Example"
+        case .yogaExampleD:
+            return "Yoga C# Example"
         }
     }
     
@@ -51,6 +57,10 @@ enum PageType: Int, CaseIterable {
             return YogaExampleAViewController(pageType: self)
         case .yogaExampleB:
             return YogaExampleBViewController(pageType: self)
+        case .yogaExampleC:
+            return YogaExampleCViewController(pageType: self)
+        case .yogaExampleD:
+            return YogaExampleDViewController(pageType: self)
         }
     }
 }
